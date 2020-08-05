@@ -1,0 +1,97 @@
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+
+/* ======= header ======= */
+.header {
+  background-color: #336697;
+  color: #fffffe;
+  padding: 25px;
+  text-align: center;
+}
+
+.header__title {
+  font-size: 25px;
+}
+
+
+/* ======= main ======= */
+.main {
+  flex: 1 1 auto;
+}
+
+.main__row {
+  display: flex;
+  height: 100%;
+}
+
+.main__nav {
+  background-color: #fe9800;
+  flex: 0 0 200px;
+  max-width: 200px; /* For IE11, because 'flex-basis' in IE doesn't account for box-sizing:border-box and paddings add additional width */
+  padding: 15px;
+}
+
+.nav__title {
+  font-size: 20px;
+}
+
+.main__content {
+  background-color: #fffffe;
+  flex: 1 1 auto;
+  padding: 15px;
+}
+
+.content__title {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.main__links {
+  background-color: #983265;
+  flex: 0 0 200px;
+  max-width: 200px; /* For IE11, because 'flex-basis' in IE doesn't account for box-sizing:border-box and paddings add additional width */
+  padding: 15px;
+}
+
+.links__title {
+  font-size: 20px;
+}
+
+
+/* ======= footer ======= */
+.footer {
+  background-color: #690;
+  color: #fffffe;
+  flex: 0 1 auto;
+  padding: 25px;
+  text-align: center;
+}
+
+.footer__title {
+  font-size: 25px;
+}
+
+
+/* -------------------------
+----------  media  --------- 
+---------------------------- */
+@media (max-width: 800px) {
+  .main__row {
+    flex-direction: column;
+  }
+  
+  .main__nav {
+    flex: 0 0 auto;
+    max-width: none;
+  }
+  
+  .main__links {
+    flex: 0 0 auto;
+    max-width: none;
+  }
+}
