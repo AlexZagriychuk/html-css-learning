@@ -1,0 +1,97 @@
+body {
+  font-size: 20px;
+}
+
+.wrapper1 {
+  /* includes: header, nav, content, links */
+  min-height: 100%;
+  padding-bottom: 75px; /* should be equal to footer.height */
+}
+
+/* ======= header ======= */
+.header {
+  background-color: #336697;
+  color: #fffffe;
+  height: 75px;
+  padding: 25px;
+  text-align: center;
+}
+
+.header__title {
+  font-size: 25px;
+}
+
+/* ======= nav, content, links ======= */
+.nav {
+  background-color: #fe9800;
+  float: left;
+  padding: 15px;
+  width: 200px;
+}
+
+.nav__title {
+  font-size: 20px;
+}
+
+.content {
+  background-color: #f5f5d0;
+  float: left;
+  padding: 15px;
+  width: calc(100% - 400px); /* 400px = fixed values of nav.width: 200px + links.width: 200px */
+}
+
+.content__title {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.links {
+  background-color: #983265;
+  float: right;
+  padding: 15px;
+  width: 200px;
+}
+
+.links__title {
+  font-size: 20px;
+}
+
+/* ======= footer ======= */
+.footer {
+  background-color: #690;
+  color: #fffffe;
+  clear: both;
+  padding: 25px;
+  text-align: center;
+
+  height: 75px;
+  margin-top: -75px; /* should be equal to negative height */
+}
+
+.footer__title {
+  font-size: 25px;
+}
+
+/* -------------------------
+----------  media  --------- 
+---------------------------- */
+@media (max-width: 800px) {
+  .nav,
+  .content,
+  .links {
+    float: none;
+    height: auto;
+    width: 100%;
+  }
+
+  .links {
+    height: 50px;
+    margin-top: -50px; /* should be equal to negative height */
+  }
+
+  .wrapper2 {
+    min-height: calc(100vh - 75px); /* should be equal to "calc(100vh - footer.height)" */
+    padding-bottom: 50px; /* should be equal to links.height (in the same @media context) */
+  }
+}
