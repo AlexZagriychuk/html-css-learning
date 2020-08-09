@@ -4,7 +4,6 @@ body {
   font-size: 20px;
 }
 
-
 /* ======= header ======= */
 .header {
   background-color: #336697;
@@ -17,9 +16,9 @@ body {
   font-size: 25px;
 }
 
-
 /* ======= main ======= */
 .main {
+  display: block; /* IE11 support for main tag */
   flex: 1 1 auto;
 }
 
@@ -62,7 +61,6 @@ body {
   font-size: 20px;
 }
 
-
 /* ======= footer ======= */
 .footer {
   background-color: #690;
@@ -76,7 +74,6 @@ body {
   font-size: 25px;
 }
 
-
 /* -------------------------
 ----------  media  --------- 
 ---------------------------- */
@@ -84,12 +81,12 @@ body {
   .main__row {
     flex-direction: column;
   }
-  
+
   .main__nav {
     flex: 0 0 auto;
     max-width: none;
   }
-  
+
   .main__links {
     flex: 0 0 auto;
     max-width: none;

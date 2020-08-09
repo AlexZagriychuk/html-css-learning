@@ -9,14 +9,13 @@ body {
   -ms-grid-rows: auto 1fr auto;
 }
 
-
 /* ======= header ======= */
 .header {
   background-color: #336697;
   color: #fffffe;
   padding: 25px;
   text-align: center;
-  
+
   grid-column: 1/4;
   grid-row: 1;
   -ms-grid-column: 1;
@@ -28,12 +27,11 @@ body {
   font-size: 25px;
 }
 
-
-/* ======= nav, content, links ======= */
+/* ======= nav, main, links ======= */
 .nav {
   background-color: #fe9800;
   padding: 15px;
-  
+
   grid-column: 1/1;
   grid-row: 2;
   -ms-grid-column: 1;
@@ -45,8 +43,9 @@ body {
   font-size: 20px;
 }
 
-.content {
+.main {
   background-color: #fffffe;
+  display: block; /* IE11 support for main tag */
   padding: 15px;
 
   grid-column: 2/2;
@@ -56,7 +55,7 @@ body {
   -ms-grid-row: 2;
 }
 
-.content__title {
+.main__title {
   font-size: 25px;
   font-weight: 700;
   margin-bottom: 15px;
@@ -95,7 +94,6 @@ body {
   font-size: 25px;
 }
 
-
 /* -------------------------
 ----------  media  --------- 
 ---------------------------- */
@@ -122,15 +120,15 @@ body {
     -ms-grid-column-span: 1;
     -ms-grid-row: 2;
   }
-  
-  .content {
+
+  .main {
     grid-column: 1/1;
     grid-row: 3;
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     -ms-grid-row: 3;
   }
-  
+
   .links {
     grid-column: 1/1;
     grid-row: 4;
