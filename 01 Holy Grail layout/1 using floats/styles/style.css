@@ -5,7 +5,9 @@ body {
 .wrapper1 {
   /* includes: header, nav, content, links */
   min-height: 100%;
-  padding-bottom: 75px; /* should be equal to footer.height */
+  overflow: hidden;
+  padding-bottom: 75px; /* must be equal to footer.height */
+  position: relative; /* to work with "position: absolute" of the ".nav::before", ".content::before", ".links::before" */
 }
 
 /* ======= header ======= */
@@ -23,10 +25,20 @@ body {
 
 /* ======= nav, content, links ======= */
 .nav {
-  background-color: #fe9800;
+  background-color: transparent;
   float: left;
   padding: 15px;
   width: 200px;
+}
+
+.nav::before {
+  background-color: #fe9800;
+  content: "";
+  height: 100%; /* 100% of the ".wrapper1" */
+  margin: -15px; /* must be equal to negative nav.padding */
+  position: absolute;
+  width: inherit; /* inherits width from ".nav" (not wrapper1) */
+  z-index: -1;
 }
 
 .nav__title {
@@ -34,10 +46,20 @@ body {
 }
 
 .content {
-  background-color: #f5f5d0;
+  background-color: transparent;
   float: left;
   padding: 15px;
   width: calc(100% - 400px); /* 400px = fixed values of nav.width: 200px + links.width: 200px */
+}
+
+.content::before {
+  background-color: #fffffe;
+  content: "";
+  height: 100%; /* 100% of the ".wrapper1" */
+  margin: -15px; /* must be equal to negative content.padding */
+  position: absolute;
+  width: inherit; /* inherits width from ".content" (not wrapper1) */
+  z-index: -1;
 }
 
 .content__title {
@@ -47,10 +69,20 @@ body {
 }
 
 .links {
-  background-color: #983265;
+  background-color: transparent;
   float: right;
   padding: 15px;
   width: 200px;
+}
+
+.links::before {
+  background-color: #983265;
+  content: "";
+  height: 100%; /* 100% of the ".wrapper1" */
+  margin: -15px; /* must be equal to negative links.padding */
+  position: absolute;
+  width: inherit; /* inherits width from ".links" (not wrapper1) */
+  z-index: -1;
 }
 
 .links__title {
@@ -58,15 +90,19 @@ body {
 }
 
 /* ======= footer ======= */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .footer {
   background-color: #690;
   color: #fffffe;
-  clear: both;
+  height: 75px;
+  margin-top: -75px; /* must be equal to negative height */
   padding: 25px;
   text-align: center;
-
-  height: 75px;
-  margin-top: -75px; /* should be equal to negative height */
 }
 
 .footer__title {
@@ -87,11 +123,11 @@ body {
 
   .links {
     height: 50px;
-    margin-top: -50px; /* should be equal to negative height */
+    margin-top: -50px; /* must be equal to negative height */
   }
 
   .wrapper2 {
-    min-height: calc(100vh - 75px); /* should be equal to "calc(100vh - footer.height)" */
-    padding-bottom: 50px; /* should be equal to links.height (in the same @media context) */
+    min-height: calc(100vh - 75px); /* must be equal to "calc(100vh - footer.height)" */
+    padding-bottom: 50px; /* must be equal to links.height (in the same @media context) */
   }
 }
