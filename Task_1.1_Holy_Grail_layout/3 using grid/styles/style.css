@@ -1,0 +1,196 @@
+body {
+  font-size: 20px;
+
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: 200px auto 200px;
+  grid-template-rows: auto 1fr auto auto; /* value is not the same as "-ms-grid-rows" because of IE 1fr triggering collapsing */
+  -ms-grid-columns: 200px auto 200px;
+  -ms-grid-rows: auto auto 1fr auto; /* value is not the same as "grid-template-rows" because of IE 1fr triggering collapsing */
+}
+
+/* ======= header ======= */
+.header {
+  background-color: #336697;
+  color: #fffffe;
+  padding: 25px;
+  text-align: center;
+
+  grid-column: 1/4;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  -ms-grid-row: 1;
+}
+
+.header__title {
+  font-size: 25px;
+}
+
+/* ======= nav, main, links ======= */
+.nav {
+  background-color: #fe9800;
+  padding: 15px;
+
+  grid-column: 1/1;
+  grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  -ms-grid-row: 2;
+}
+
+.ie-fix1 {
+  /* all values must be equal to values in ".nav" except for "grid-row" and "-ms-grid-row" (both must be + 1)*/
+  background-color: #fe9800;
+
+  grid-column: 1/1;
+  grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  -ms-grid-row: 3;
+}
+
+.nav__title {
+  font-size: 20px;
+}
+
+.main {
+  background-color: #fffffe;
+  display: block; /* IE11 support for main tag */
+  padding: 15px;
+
+  grid-column: 2/2;
+  grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  -ms-grid-row: 2;
+}
+
+.ie-fix2 {
+  /* all values must be equal to values in ".main" except for "grid-row" and "-ms-grid-row" (both must be + 1)*/
+  background-color: #fffffe;
+
+  grid-column: 2/2;
+  grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  -ms-grid-row: 3;
+}
+
+.main__title {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.links {
+  background-color: #983265;
+  padding: 15px;
+
+  grid-column: 3/3;
+  grid-row: 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  -ms-grid-row: 2;
+}
+
+.ie-fix3 {
+  /* all values must be equal to values in ".links" except for "grid-row" and "-ms-grid-row" (both must be + 1)*/
+  background-color: #983265;
+
+  grid-column: 3/3;
+  grid-row: 3;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  -ms-grid-row: 3;
+}
+
+.links__title {
+  font-size: 20px;
+}
+
+/* ======= footer ======= */
+.footer {
+  background-color: #690;
+  color: #fffffe;
+  padding: 25px;
+  text-align: center;
+
+  grid-column: 1/4;
+  grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  -ms-grid-row: 4;
+}
+
+.footer__title {
+  font-size: 25px;
+}
+
+/* -------------------------
+----------  media  --------- 
+---------------------------- */
+@media (max-width: 800px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto auto auto;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: auto auto auto 1fr auto auto;
+  }
+
+  .header {
+    grid-column: 1/1;
+    grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    -ms-grid-row: 1;
+  }
+
+  .nav {
+    grid-column: 1/1;
+    grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    -ms-grid-row: 2;
+  }
+
+  .ie-fix1 {
+    display: none;
+  }
+
+  .main {
+    grid-column: 1/1;
+    grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    -ms-grid-row: 3;
+  }
+
+  .ie-fix2 {
+    grid-column: 1/1;
+    grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    -ms-grid-row: 4;
+  }
+
+  .links {
+    grid-column: 1/1;
+    grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    -ms-grid-row: 5;
+  }
+
+  .ie-fix3 {
+    display: none;
+  }
+  
+  .footer {
+    grid-column: 1/1;
+    grid-row: 6;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    -ms-grid-row: 6;
+  }
+}
