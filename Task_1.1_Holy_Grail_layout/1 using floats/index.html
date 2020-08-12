@@ -12,7 +12,9 @@
 </head>
 
 <body>
-  <div class="wrapper1">
+  <!-- wrapper1 separates everything from the footer in order to push footer to the bottom of the page -->
+  <div class="wrapper1 clearfix">
+    <!-- wrapper2 separates header, nav and content from links in order to push links to the bottom of the wrapper1 (to the bottom of the page, but before footer) in the 1-column layout -->
     <div class="wrapper2">
       <header class="header">
         <h1 class="header__title">Header</h1>
@@ -32,13 +34,11 @@
           nemo praesentium odio! Impedit itaque id aperiam laudantium alias, veniam nisi dolore. Corporis nesciunt
           repellat totam dolore minima veritatis suscipit nemo consequatur nostrum. Magnam, hic!</p>
       </div>
-      <!-- 'Aside' has been moved into the wrapper2 -->
-      <aside class="links">
-        <h1 class="links__title">Related links</h1>
-      </aside>
     </div> <!-- /wrapper2 -->
 
-   
+    <aside class="links">
+      <h1 class="links__title">Related links</h1>
+    </aside>
   </div> <!-- /wrapper1 -->
 
   <footer class="footer">

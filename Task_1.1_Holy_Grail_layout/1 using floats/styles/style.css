@@ -5,7 +5,9 @@ body {
 .wrapper1 {
   /* includes: header, nav, content, links */
   min-height: 100%;
-  padding-bottom: 75px; /* should be equal to footer.height */
+  overflow: hidden;
+  padding-bottom: 75px; /* must be equal to footer.height */
+  position: relative; /* to work with "position: absolute" of the ".nav::before", ".content::before", ".links::before" */
 }
 
 /* ======= header ======= */
@@ -23,32 +25,20 @@ body {
 
 /* ======= nav, content, links ======= */
 .nav {
-  background-color: #fe9800;
+  background-color: transparent;
   float: left;
   padding: 15px;
   width: 200px;
-  position: relative;
 }
 
-.nav:after, /* set pseudoelement in order to do the same height of the columns */
-.content:after,
-.links:after {
-  content: '';
+.nav::before {
   background-color: #fe9800;
+  content: "";
+  height: 100%; /* 100% of the ".wrapper1" */
+  margin: -15px; /* must be equal to negative nav.padding */
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
-  height: 999px;
+  width: inherit; /* inherits width from ".nav" (not wrapper1) */
   z-index: -1;
-}
-
-.content:after {
-  background-color: #f5f5d0;
-}
-
-.links:after {
-  background-color: #983265;
 }
 
 .nav__title {
@@ -56,11 +46,20 @@ body {
 }
 
 .content {
-  background-color: #f5f5d0;
+  background-color: transparent;
   float: left;
   padding: 15px;
-  position: relative;
   width: calc(100% - 400px); /* 400px = fixed values of nav.width: 200px + links.width: 200px */
+}
+
+.content::before {
+  background-color: #fffffe;
+  content: "";
+  height: 100%; /* 100% of the ".wrapper1" */
+  margin: -15px; /* must be equal to negative content.padding */
+  position: absolute;
+  width: inherit; /* inherits width from ".content" (not wrapper1) */
+  z-index: -1;
 }
 
 .content__title {
@@ -70,11 +69,20 @@ body {
 }
 
 .links {
-  background-color: #983265;
+  background-color: transparent;
   float: right;
   padding: 15px;
   width: 200px;
-  position: relative;
+}
+
+.links::before {
+  background-color: #983265;
+  content: "";
+  height: 100%; /* 100% of the ".wrapper1" */
+  margin: -15px; /* must be equal to negative links.padding */
+  position: absolute;
+  width: inherit; /* inherits width from ".links" (not wrapper1) */
+  z-index: -1;
 }
 
 .links__title {
@@ -82,24 +90,23 @@ body {
 }
 
 /* ======= footer ======= */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .footer {
   background-color: #690;
   color: #fffffe;
-  clear: both;
+  height: 75px;
+  margin-top: -75px; /* must be equal to negative height */
   padding: 25px;
   text-align: center;
-
-  height: 75px;
-  margin-top: -75px; /* should be equal to negative height */
 }
 
 .footer__title {
   font-size: 25px;
-}
-
-.wrapper2 {
-  overflow: hidden;
-  min-height: calc(100vh - 75px); /* set height to stretch blocks */
 }
 
 /* -------------------------
@@ -114,18 +121,13 @@ body {
     width: 100%;
   }
 
-  .nav:after,
-  .content:after,
-  .links:after {
-    content: none; /* no needed in mobile */
-  }
-
   .links {
     height: 50px;
+    margin-top: -50px; /* must be equal to negative height */
   }
 
   .wrapper2 {
-    min-height: calc(100vh - 75px); /* should be equal to "calc(100vh - footer.height)" */
-    padding-bottom: 50px; /* should be equal to links.height (in the same @media context) */
+    min-height: calc(100vh - 75px); /* must be equal to "calc(100vh - footer.height)" */
+    padding-bottom: 50px; /* must be equal to links.height (in the same @media context) */
   }
 }
