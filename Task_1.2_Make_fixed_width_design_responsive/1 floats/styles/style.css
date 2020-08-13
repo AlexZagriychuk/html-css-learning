@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+.page-wrap {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.main-story {
+  position: relative;
+  margin: 0 0 25px 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: lightblue;
+}
+
+.story-intro {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  color: white;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+h1,
+h2 {
+  margin: 0 0 10px 0;
+}
+
+.story-intro h1 {
+  font-size: 2.5em;
+}
+.story-intro p {
+  margin: 0;
+}
+
+.sub-stories {
+  overflow: hidden;
+}
+
+.sub-story {
+  float: left;
+  width: 250px;
+  margin: 0 25px 25px 0;
+  position: relative;
+  font-size: 80%;
+}
+
+.sub-story:nth-child(3n) {
+  margin-right: 0;
+}
+
+/* -------------------------
+----------  media  --------- 
+---------------------------- */
+@media screen and (min-width: 1200px) {
+  body {
+    background-color: gray;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  /* only 2 images in the row (2 sub-stories) */
+  .sub-stories {
+    width: 525px; /* ".sub-story.width" (250px) * 2 + some margin between 2 items */
+    margin: 0 auto;
+  }
+
+  .sub-story {
+    margin-right: 0;
+  }
+
+  .sub-story:nth-child(odd) {
+    float: left;
+  }
+
+  .sub-story:nth-child(even) {
+    float: right;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sub-stories {
+    width: 100%;
+  }
+
+  /* only 1 image in the row (1 sub-story) */
+  /* ".sub-story" can`t be used here because we need to override "sub-story:nth-child()" from the other @media rules */
+  .sub-story:nth-child(1n) {
+    float: none;
+    margin: 0 auto 25px auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* pushing main-story intro below main-story img (if we don`t, then on the low width values, intro will overflow the img on the top side of the img) */
+  .story-intro {
+    position: relative;
+  }
+}
