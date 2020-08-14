@@ -54,7 +54,7 @@ h2 {
 }
 
 .sub-story {
-  width: 250px;
+  max-width: 250px;
   font-size: 80%;
   margin-bottom: 25px; 
   position: relative;
@@ -72,14 +72,14 @@ h2 {
 @media screen and (max-width: 991px) {
   /* only 2 images in the row (2 sub-stories) */
   .sub-stories {
-    width: 525px; /* ".sub-story.width" (250px) * 2 + some margin between 2 items */
+    max-width: 525px; /* ".sub-story.width" (250px) * 2 + some margin between 2 items */
   }
 }
 
 @media screen and (max-width: 767px) {
   /* only 1 image in the row (1 sub-story) */
   .sub-stories {
-    width: 250px; /* ".sub-story.width" */
+    max-width: 250px; /* ".sub-story.width" */
   }
 }
 

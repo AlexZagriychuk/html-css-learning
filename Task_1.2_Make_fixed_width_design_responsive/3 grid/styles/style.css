@@ -63,7 +63,7 @@ h2 {
   font-size: 80%;
   margin-bottom: 25px;
   position: relative;
-  width: 250px;
+  max-width: 250px;
 }
 
 .sub-story:nth-child(3n-2) {
@@ -100,7 +100,7 @@ h2 {
     grid-template-columns: auto auto;
     -ms-grid-columns: auto 25px auto;
     margin: 0 auto;
-    width: 525px;
+    max-width: 525px;
   }
 
   .sub-story:nth-child(odd) {
