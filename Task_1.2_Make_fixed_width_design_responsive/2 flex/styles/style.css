@@ -54,7 +54,7 @@ h2 {
 }
 
 .sub-story {
-  flex: 0 0 250px;
+  width: 250px;
   font-size: 80%;
   margin-bottom: 25px; 
   position: relative;
