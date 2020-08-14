@@ -47,10 +47,6 @@ h2 {
   margin: 0;
 }
 
-.sub-stories {
-  overflow: hidden;
-}
-
 .sub-story {
   float: left;
   width: 250px;
