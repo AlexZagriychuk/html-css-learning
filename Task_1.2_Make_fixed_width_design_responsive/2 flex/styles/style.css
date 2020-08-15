@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+.page-wrap {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.main-story {
+  position: relative;
+  margin: 0 0 25px 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: lightblue;
+}
+
+.story-intro {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  color: white;
+}
+
+h1 {
+  font-size: 4em;
+}
+h1,
+h2 {
+  margin: 0 0 10px 0;
+}
+
+.story-intro h1 {
+  font-size: 2.5em;
+}
+.story-intro p {
+  margin: 0;
+}
+
+.sub-stories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto 25px auto;
+}
+
+.sub-story {
+  max-width: 250px;
+  font-size: 80%;
+  margin-bottom: 25px; 
+  position: relative;
+}
+
+/* -------------------------
+----------  media  --------- 
+---------------------------- */
+@media screen and (min-width: 1200px) {
+  body {
+    background-color: gray;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  /* only 2 images in the row (2 sub-stories) */
+  .sub-stories {
+    max-width: 525px; /* ".sub-story.width" (250px) * 2 + some margin between 2 items */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* only 1 image in the row (1 sub-story) */
+  .sub-stories {
+    max-width: 250px; /* ".sub-story.width" */
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* pushing main-story intro below main-story img (if we don`t, then on the low width values, intro will overflow the img on the top side of the img) */
+  .story-intro {
+    position: relative;
+  }
+}

@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+}
+
+.page-wrap {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.main-story {
+  position: relative;
+  margin: 0 0 25px 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: lightblue;
+}
+
+.story-intro {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  color: white;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+h1,
+h2 {
+  margin: 0 0 10px 0;
+}
+
+.story-intro h1 {
+  font-size: 2.5em;
+}
+
+.story-intro p {
+  margin: 0;
+}
+
+.sub-stories {
+  margin: 0 0 25px 0;
+
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: auto auto auto;
+  -ms-grid-columns: auto 25px auto 25px auto;
+  justify-content: space-between;
+  -ms-grid-rows: auto;
+}
+
+.sub-story {
+  font-size: 80%;
+  margin-bottom: 25px;
+  position: relative;
+  max-width: 250px;
+}
+
+.sub-story:nth-child(3n-2) {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+}
+
+.sub-story:nth-child(3n-1) {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+}
+
+.sub-story:nth-child(3n) {
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 1;
+}
+
+.sub-story:nth-child(n + 4) {
+  -ms-grid-row: 2;
+}
+
+/* -------------------------
+----------  media  --------- 
+---------------------------- */
+@media screen and (min-width: 1200px) {
+  body {
+    background-color: gray;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  /* only 2 images in the row (2 sub-stories) */
+  .sub-stories {
+    grid-template-columns: auto auto;
+    -ms-grid-columns: auto 25px auto;
+    margin: 0 auto;
+    max-width: 525px;
+  }
+
+  .sub-story:nth-child(odd) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+
+  .sub-story:nth-child(even) {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+  }
+
+  .sub-story:nth-child(n + 3) {
+    -ms-grid-row: 2;
+  }
+
+  .sub-story:nth-child(n + 5) {
+    -ms-grid-row: 3;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* only 1 image in the row (1 sub-story) */
+  .sub-stories {
+    display: block; /* deactivating grid (display: -ms-grid) only for IE */
+    display: grid;
+
+    grid-template-columns: auto;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .sub-story {
+    margin: 0 auto 25px; /* centring the block horizontally (+ 25px bottom) */
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* pushing main-story intro below main-story img (if we don`t, then on the low width values, intro will overflow the img on the top side of the img) */
+  .story-intro {
+    position: relative;
+  }
+}
