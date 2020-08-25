@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TASK 1.3 Create Carousel using CSS only</title>
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="carousel">
+      <!-- carousel__activator items must be on the top inside the carousel div -->
+      <input class="carousel__activator" type="radio" name="carousel" id="1" checked="checked" />
+      <input class="carousel__activator" type="radio" name="carousel" id="2" />
+      <input class="carousel__activator" type="radio" name="carousel" id="3" />
+
+      <div class="carousel__controls">
+        <label class="left-arrow" for=""><img src="icons/left arrow.svg" alt="Left Arrow"></label>
+        <label class="right-arrow" for="2"><img src="icons/right arrow.svg" alt="Right Arrow"></label>
+      </div>
+      <div class="carousel__controls">
+        <label class="left-arrow" for="1"><img src="icons/left arrow.svg" alt="Left Arrow"></label>
+        <label class="right-arrow" for="3"><img src="icons/right arrow.svg" alt="Right Arrow"></label>
+      </div>
+      <div class="carousel__controls">
+        <label class="left-arrow" for="2"><img src="icons/left arrow.svg" alt="Left Arrow"></label>
+        <label class="right-arrow" for=""><img src="icons/right arrow.svg" alt="Right Arrow"></label>
+      </div>
+
+      <ul class="carousel__slides">
+        <li class="carousel__slide"></li>
+        <li class="carousel__slide"></li>
+        <li class="carousel__slide"></li>
+      </ul>
+
+      <div class="carousel__indicators">
+        <label class="carousel__indicator" for="1"></label>
+        <label class="carousel__indicator" for="2"></label>
+        <label class="carousel__indicator" for="3"></label>
+      </div>
+
+    </div> <!-- /carousel -->
+  </div> <!-- /wrapper -->
+
+</body>
+
+</html>
