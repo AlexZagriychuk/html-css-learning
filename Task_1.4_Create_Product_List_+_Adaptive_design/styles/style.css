@@ -9,7 +9,7 @@ body {
   max-width: 1200px;
 }
 
-.card {
+.cards__card {
   border: 1px yellow solid;
   float: left;
   height: 210px;
@@ -17,12 +17,12 @@ body {
   width: calc((100% - 60px) / 3);
 }
 
-.card:nth-child(3n + 6) { 
+.cards__card:nth-child(3n + 6) { 
   /* Left margin 0 for 6th, 9th, ... elements */
   margin-left: 0px;
 }
 
-.top-deal-card {
+.card_top-deal {
   border-color: red;
   height: 445px;
   margin-left: 0px;
