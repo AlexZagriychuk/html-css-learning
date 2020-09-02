@@ -1,21 +1,23 @@
 .wrapper {
-  max-width: 1200px;
   margin: 0 auto;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, calc((100% - 60px) / 3)); /* (100% - column-gap * 2) / columns count */
-  grid-auto-rows: 210px;
-  gap: 25px 30px;
+  max-width: 1200px;
 }
 
 .card {
   border: 1px yellow solid;
+  float: left;
+  height: 210px;
+  margin: 0 0 25px 20px;
+  width: calc((100% - 60px) / 3);
+}
+
+.card:nth-child(3n + 6) { 
+  /* Left margin 0 for 6th, 9th, ... elements */
+  margin-left: 0px;
 }
 
 .top-deal-card {
-  grid-row: span 2;
-  order: -1;
   border-color: red;
+  height: 445px;
+  margin-left: 0px;
 }
