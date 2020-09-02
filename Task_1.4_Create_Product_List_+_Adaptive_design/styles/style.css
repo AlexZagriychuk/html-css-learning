@@ -1,0 +1,21 @@
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, calc((100% - 60px) / 3)); /* (100% - column-gap * 2) / columns count */
+  grid-auto-rows: 210px;
+  gap: 25px 30px;
+}
+
+.card {
+  border: 1px yellow solid;
+}
+
+.top-deal-card {
+  grid-row: span 2;
+  order: -1;
+  border-color: red;
+}
