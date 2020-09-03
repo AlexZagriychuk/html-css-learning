@@ -9,12 +9,6 @@ body {
   max-width: 1200px;
 }
 
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
 .center-content { 
   display: flex;
   justify-content: center;
@@ -31,8 +25,10 @@ body {
   margin: 0 0 25px 20px;
   position: relative;
   width: calc((100% - 60px) / 3);
-
   padding: 8px 16px;
+
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .cards__card:nth-child(3n + 6) {
@@ -51,8 +47,8 @@ body {
   Normal card content 
 ----------------------------------- */
 .card__discount {
+  position: absolute;
   background-color: #e6e6e6; /* placeholder */
-  float: left;
   margin-left: -8px;
   height: 58px;
   width: 58px;
@@ -67,15 +63,15 @@ body {
 }
 
 .card__description {
-  float: left;
+  order: 1;
   height: 48px;
   width: 55%;
-  margin-top: 15px;
+  margin-top: 73px; /* should be = card__discount.height + margin top value for this element */
   padding-right: 5%;
 }
 
 .card__img {
-  float: right;
+  order: 2;
   width: 45%;
   height: 121px; /* should to be = .card__discount.height + .card__description.margin-top + .card__description.height */
 }
@@ -89,6 +85,8 @@ body {
   border-bottom: 2px #e6e6e6 dashed;
   height: 25px;
   margin-top: 15px;
+  order: 3;
+  width: 100%;
 }
 
 .card__price {
@@ -109,6 +107,8 @@ body {
   justify-content: center;
   margin-top: 15px;
   text-align: center;
+  order: 4;
+  width: 100%;
 }
 
 .additional-info__shipping {
