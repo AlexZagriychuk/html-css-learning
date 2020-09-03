@@ -23,12 +23,7 @@ body {
   float: left;
   height: 210px;
   margin: 0 0 25px 20px;
-  padding: 8px 16px;
-  position: relative;
   width: calc((100% - 60px) / 3);
-
-  display: flex;
-  flex-flow: row wrap;
 }
 
 .cards__card:nth-child(3n + 6) {
@@ -44,6 +39,15 @@ body {
 /*---------------------------------
   Normal card content 
 ----------------------------------- */
+.cards__card > a {
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
+  width: 100%;
+  padding: 8px 16px;
+  position: relative;
+}
+
 .card__discount {
   position: absolute;
   color: #fff;
@@ -71,7 +75,7 @@ body {
   height: 121px; /* should to be = .card__discount.height + .card__description.margin-top + .card__description.height */
 }
 
-.card__img > img {
+.card__img img {
   height: 100%;
   width: 100%;
   object-fit: contain;
@@ -137,14 +141,14 @@ body {
 /*---------------------------------
   Top-deal card content
 ----------------------------------- */
-.card_top-deal > .card__img {
+.card_top-deal .card__img {
   order: 1;
   height: 250px;
   margin-top: 17px;
   width: 100%;
 }
 
-.card_top-deal > .card__selling-info {
+.card_top-deal .card__selling-info {
   order: 2;
 }
 
@@ -152,7 +156,7 @@ body {
   font-size: 25px;
 }
 
-.card_top-deal > .card__description {
+.card_top-deal .card__description {
   order: 3;
   border-bottom: 2px #e6e6e6 dashed;
   margin-top: 15px;
@@ -160,7 +164,7 @@ body {
   width: 100%;
 }
 
-.card_top-deal > .card__additional-info {
+.card_top-deal .card__additional-info {
   margin-top: 10px;
 }
 
