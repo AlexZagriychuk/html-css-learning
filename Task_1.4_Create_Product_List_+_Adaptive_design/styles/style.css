@@ -7,6 +7,7 @@ body {
 .wrapper {
   margin: 0 auto;
   max-width: 1200px;
+  padding: 5px;
 }
 
 .center-children {
@@ -20,11 +21,12 @@ body {
 ----------------------------------- */
 .cards__card {
   outline: #000 solid 1px;
-  /* border: 1px #000 solid; */
   float: left;
   height: 210px;
   margin: 0 0 25px 20px;
-  width: calc((100% - 60px) / 3);
+  width: calc(
+    (100% - 40px) / 3
+  ); /* ((100% - this.margin-left * 2 {2 is number of cards in the row - 1} / 3 {3 is number of cards in the row} */
 }
 
 .cards__card:nth-child(3n + 6) {
@@ -93,6 +95,7 @@ body {
   order: 3;
   border-bottom: 2px #e6e6e6 dashed;
   color: #878787;
+  margin-top: 5px;
   padding-bottom: 5px;
   width: 100%;
 
@@ -214,4 +217,36 @@ body {
 
 .discount-level-7 .card__price {
   color: #ff6666;
+}
+
+/*---------------------------------
+  Media
+----------------------------------- */
+@media screen and (max-width: 991px) {
+  /* only 2 cards in the row (2 cards__card) */
+  .cards__card {
+    width: calc((100% - 20px) / 2); /* ((100% - this.margin-left / 2 {2 is number of cards in the row} */
+  }
+
+  /* ".cards__card" can`t be used here because we need to override "cards__card:nth-child()" from the other @media rules */
+  .cards__card:nth-child(1n) {
+    margin-left: 0px;
+  }
+
+  .cards__card:nth-child(2),
+  .cards__card:nth-child(2n + 3) {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* only 1 card in the row (1 cards__card) */
+  .cards__card {
+    width: 100%;
+  }
+
+  /* ".cards__card" can`t be used here because we need to override "cards__card:nth-child()" from the other @media rules */
+  .cards__card:nth-child(1n) {
+    margin-left: 0px;
+  }
 }
