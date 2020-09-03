@@ -140,6 +140,7 @@ body {
 
 .additional-info__timer {
   flex: 0 1 28%;
+  padding: 0 10px;
 }
 
 *[class^="additional-info"] + *[class^="additional-info"] {
