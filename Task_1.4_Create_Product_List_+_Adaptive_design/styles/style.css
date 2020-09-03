@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .wrapper {
@@ -9,15 +9,33 @@ body {
   max-width: 1200px;
 }
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.center-content { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*---------------------------------
+  Cards layout 
+----------------------------------- */
 .cards__card {
   border: 1px yellow solid;
   float: left;
   height: 210px;
   margin: 0 0 25px 20px;
+  position: relative;
   width: calc((100% - 60px) / 3);
+
+  padding: 8px 16px;
 }
 
-.cards__card:nth-child(3n + 6) { 
+.cards__card:nth-child(3n + 6) {
   /* Left margin 0 for 6th, 9th, ... elements */
   margin-left: 0px;
 }
@@ -27,3 +45,81 @@ body {
   height: 445px;
   margin-left: 0px;
 }
+
+
+/*---------------------------------
+  Normal card content 
+----------------------------------- */
+.card__discount {
+  background-color: #e6e6e6; /* placeholder */
+  float: left;
+  margin-left: -8px;
+  height: 58px;
+  width: 58px;
+  border-radius: 50%;
+  padding: 9px; /* to keep the content within the circle */
+
+  /* centering the content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card__description {
+  float: left;
+  height: 48px;
+  width: 55%;
+  margin-top: 15px;
+  padding-right: 5%;
+}
+
+.card__img {
+  float: right;
+  width: 45%;
+  height: 121px; /* should to be = .card__discount.height + .card__description.margin-top + .card__description.height */
+}
+
+.card__img > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.card__selling-info {
+  border-bottom: 2px #e6e6e6 dashed;
+  height: 25px;
+  margin-top: 15px;
+}
+
+.card__price {
+  float: left;
+}
+
+.card__old-price {
+  float: left;
+  margin-left: 20px;
+}
+
+.card__seller {
+  float: right;
+}
+
+.card__additional-info {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.additional-info__shipping {
+  flex: 0 1 40%;
+}
+
+.additional-info__status {
+  flex: 0 1 32%;
+}
+
+.additional-info__timer {
+  flex: 0 1 28%;
+}
+
