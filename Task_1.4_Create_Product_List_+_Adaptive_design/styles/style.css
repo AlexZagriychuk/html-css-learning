@@ -47,8 +47,10 @@ body {
   Normal card content 
 ----------------------------------- */
 .card__discount {
-  background-color: #e6e6e6; /* placeholder */
   position: absolute;
+  background-color: #e6e6e6; /* placeholder */
+  color: #fff;
+  font-size: 17px;
   height: 58px;
   width: 58px;
   border-radius: 50%;
@@ -62,6 +64,8 @@ body {
   width: 55%;
   margin-top: 73px; /* should be = card__discount.height + margin top value for this element */
   padding-right: 2%;
+  color: #878787;
+  font-size: 14px;
 }
 
 .card__img {
@@ -79,29 +83,36 @@ body {
 .card__selling-info {
   order: 3;
   border-bottom: 2px #e6e6e6 dashed;
+  color: #878787;
   margin-top: 15px;
   padding-bottom: 5px;
   width: 100%;
+
+  display: flex;
+  align-items: flex-end;
 }
 
 .card__price {
-  float: left;
+  font-size: 21px;
 }
 
 .card__old-price {
-  float: left;
+  font-size: 13px;
   margin-left: 20px;
 }
 
 .card__seller {
-  float: right;
+  font-size: 13px;
+  margin-left: auto;
 }
 
 .card__additional-info {
   order: 4;
+  color: #878787;
   display: flex;
+  font-size: 13px;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 10px;
   text-align: center;
   width: 100%;
 }
@@ -131,6 +142,10 @@ body {
 
 .card_top-deal > .card__selling-info {
   order: 2;
+}
+
+.card_top-deal .card__price {
+  font-size: 25px;
 }
 
 .card_top-deal > .card__description {
