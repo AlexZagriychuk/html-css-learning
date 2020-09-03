@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 5px;
+}
+
+.center-children {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*---------------------------------
+  Cards layout 
+----------------------------------- */
+.cards__card {
+  outline: #000 solid 1px;
+  float: left;
+  height: 210px;
+  margin: 0 0 25px 20px;
+  width: calc(
+    (100% - 40px) / 3
+  ); /* ((100% - this.margin-left * 2 {2 is number of cards in the row - 1} / 3 {3 is number of cards in the row} */
+}
+
+.cards__card:nth-child(3n + 6) {
+  /* Left margin=0 for 6th, 9th, ... elements */
+  margin-left: 0px;
+}
+
+.card_top-deal {
+  height: 445px;
+  margin-left: 0px;
+}
+
+/*---------------------------------
+  Normal card content 
+----------------------------------- */
+.cards__card > a {
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
+  width: 100%;
+  padding: 8px 16px;
+  position: relative;
+}
+
+.cards__card:hover {
+  outline-width: 3px;
+}
+.cards__card:hover .card__description > span {
+  text-decoration: underline;
+}
+
+.card__discount {
+  position: absolute;
+  color: #fff;
+  font-size: 17px;
+  height: 58px;
+  width: 58px;
+  border-radius: 50%;
+  margin-left: -8px;
+  padding: 9px; /* to keep the content within the circle */
+  text-align: center;
+}
+
+.card__description {
+  order: 1;
+  width: 55%;
+  margin-top: 73px; /* should be = card__discount.height + margin top value for this element */
+  padding-right: 2%;
+  color: #878787;
+  font-size: 14px;
+}
+
+.card__img {
+  order: 2;
+  width: 45%;
+  height: 121px; /* should to be = .card__discount.height + .card__description.margin-top + .card__description.height */
+}
+
+.card__img img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.card__selling-info {
+  order: 3;
+  border-bottom: 2px #e6e6e6 dashed;
+  color: #878787;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.card__price {
+  font-size: 21px;
+}
+
+.card__old-price {
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M1 0 L0 1 L99 100 L100 99' stroke='%23878787' stroke-width='5' /></svg>");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%, auto;
+
+  font-size: 13px;
+  margin-left: 20px;
+}
+
+.card__seller {
+  font-size: 13px;
+  margin-left: auto;
+}
+
+.card__additional-info {
+  order: 4;
+  color: #878787;
+  display: flex;
+  font-size: 13px;
+  justify-content: center;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.additional-info__shipping {
+  flex: 0 1 40%;
+}
+
+.additional-info__status {
+  flex: 0 1 32%;
+}
+
+.additional-info__timer {
+  flex: 0 1 28%;
+  padding: 0 10px;
+}
+
+*[class^="additional-info"] + *[class^="additional-info"] {
+  border-left: 1px solid #d8d8d8;
+}
+
+/*---------------------------------
+  Top-deal card content
+----------------------------------- */
+.card_top-deal .card__img {
+  order: 1;
+  height: 250px;
+  margin-top: 17px;
+  width: 100%;
+}
+
+.card_top-deal .card__selling-info {
+  order: 2;
+}
+
+.card_top-deal .card__price {
+  font-size: 25px;
+}
+
+.card_top-deal .card__description {
+  order: 3;
+  border-bottom: 2px #e6e6e6 dashed;
+  margin-top: 15px;
+  padding-right: 47%; /* should be = 100% - card__description.width % */
+  width: 100%;
+}
+
+.card_top-deal .card__additional-info {
+  margin-top: 10px;
+}
+
+/*---------------------------------
+  Discount levels
+----------------------------------- */
+.discount-level-4 {
+  outline-color: #ffbe17;
+}
+
+.discount-level-4 .card__discount {
+  background-color: #ffbe17;
+}
+
+.discount-level-4 .card__price {
+  color: #ffbe17;
+}
+
+.discount-level-6 {
+  outline-color: #ff931d;
+}
+
+.discount-level-6 .card__discount {
+  background-color: #ff931d;
+}
+
+.discount-level-6 .card__price {
+  color: #ff931d;
+}
+
+.discount-level-7 {
+  outline-color: #ff6666;
+}
+
+.discount-level-7 .card__discount {
+  background-color: #ff6666;
+}
+
+.discount-level-7 .card__price {
+  color: #ff6666;
+}
+
+/*---------------------------------
+  Media
+----------------------------------- */
+@media screen and (max-width: 991px) {
+  /* only 2 cards in the row (2 cards__card) */
+  .cards__card {
+    width: calc((100% - 20px) / 2); /* ((100% - this.margin-left / 2 {2 is number of cards in the row} */
+  }
+
+  /* ".cards__card" can`t be used here because we need to override "cards__card:nth-child()" from the other @media rules */
+  .cards__card:nth-child(1n) {
+    margin-left: 0px;
+  }
+
+  .cards__card:nth-child(2),
+  .cards__card:nth-child(2n + 3) {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* only 1 card in the row (1 cards__card) */
+  .cards__card {
+    width: 100%;
+  }
+
+  /* ".cards__card" can`t be used here because we need to override "cards__card:nth-child()" from the other @media rules */
+  .cards__card:nth-child(1n) {
+    margin-left: 0px;
+  }
+}
