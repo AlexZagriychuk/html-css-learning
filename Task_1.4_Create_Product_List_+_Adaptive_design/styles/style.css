@@ -19,7 +19,8 @@ body {
   Cards layout 
 ----------------------------------- */
 .cards__card {
-  border: 1px #000 solid;
+  outline: #000 solid 1px;
+  /* border: 1px #000 solid; */
   float: left;
   height: 210px;
   margin: 0 0 25px 20px;
@@ -46,6 +47,13 @@ body {
   width: 100%;
   padding: 8px 16px;
   position: relative;
+}
+
+.cards__card:hover {
+  outline-width: 3px;
+}
+.cards__card:hover .card__description > span {
+  text-decoration: underline;
 }
 
 .card__discount {
@@ -172,7 +180,7 @@ body {
   Discount levels
 ----------------------------------- */
 .discount-level-4 {
-  border-color: #ffbe17;
+  outline-color: #ffbe17;
 }
 
 .discount-level-4 .card__discount {
@@ -184,7 +192,7 @@ body {
 }
 
 .discount-level-6 {
-  border-color: #ff931d;
+  outline-color: #ff931d;
 }
 
 .discount-level-6 .card__discount {
@@ -196,7 +204,7 @@ body {
 }
 
 .discount-level-7 {
-  border-color: #ff6666;
+  outline-color: #ff6666;
 }
 
 .discount-level-7 .card__discount {
