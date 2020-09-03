@@ -97,6 +97,11 @@ body {
 }
 
 .card__old-price {
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M1 0 L0 1 L99 100 L100 99' stroke='%23878787' stroke-width='5' /></svg>");
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size: 100% 100%, auto;
+  
   font-size: 13px;
   margin-left: 20px;
 }
@@ -127,6 +132,10 @@ body {
 
 .additional-info__timer {
   flex: 0 1 28%;
+}
+
+*[class^="additional-info"] + *[class^="additional-info"] {
+  border-left: 1px solid #d8d8d8;
 }
 
 
