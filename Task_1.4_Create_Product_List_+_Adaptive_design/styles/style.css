@@ -64,10 +64,9 @@ body {
 
 .card__description {
   order: 1;
-  height: 48px;
   width: 55%;
   margin-top: 73px; /* should be = card__discount.height + margin top value for this element */
-  padding-right: 5%;
+  padding-right: 2%;
 }
 
 .card__img {
@@ -83,7 +82,7 @@ body {
 
 .card__selling-info {
   border-bottom: 2px #e6e6e6 dashed;
-  height: 25px;
+  padding-bottom: 5px;
   margin-top: 15px;
   order: 3;
   width: 100%;
