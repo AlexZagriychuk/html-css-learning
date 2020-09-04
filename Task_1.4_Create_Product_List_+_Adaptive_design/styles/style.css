@@ -91,7 +91,7 @@ body {
 
 .card__selling-info {
   order: 3;
-  border-bottom: 2px #e6e6e6 dashed;
+  border-bottom: 2px #e6e6e6 dotted;
   color: #878787;
   margin-top: 5px;
   padding-bottom: 5px;
@@ -166,7 +166,7 @@ body {
 
 .card_top-deal .card__description {
   order: 3;
-  border-bottom: 2px #e6e6e6 dashed;
+  border-bottom: 2px #e6e6e6 dotted;
   margin-top: 15px;
   padding-right: 47%; /* should be = 100% - card__description.width % */
   width: 100%;
