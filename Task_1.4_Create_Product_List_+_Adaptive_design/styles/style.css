@@ -24,9 +24,7 @@ body {
   float: left;
   height: 210px;
   margin: 0 0 25px 20px;
-  width: calc(
-    (100% - 40px) / 3
-  ); /* ((100% - this.margin-left * 2 {2 is number of cards in the row - 1} / 3 {3 is number of cards in the row} */
+  width: calc((100% - 40px) / 3); /* ((100% - this.margin-left * 2 {2 is number of cards in the row - 1} / 3 {3 is number of cards in the row} */
 }
 
 .cards__card:nth-child(3n + 6) {
@@ -98,7 +96,6 @@ body {
   margin-top: 5px;
   padding-bottom: 5px;
   width: 100%;
-
   display: flex;
   align-items: flex-end;
 }
@@ -112,7 +109,6 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100% 100%, auto;
-
   font-size: 13px;
   margin-left: 20px;
 }
