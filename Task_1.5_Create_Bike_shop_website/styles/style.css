@@ -19,7 +19,7 @@ body {
 .header {
   align-items: center;
   background-color: #cdccce;
-  box-shadow: 5px 5px 10px 0px #009be0;
+  box-shadow: 0px 5px 10px 0px #009be0;
   display: flex;
   padding: 5px;
   transition: box-shadow 0.2s;
@@ -27,7 +27,7 @@ body {
 }
 
 .header:hover {
-  box-shadow: 5px 5px 10px 0px #005dd9;
+  box-shadow: 0px 5px 10px 0px #005dd9;
   transition: box-shadow 0.2s;
 }
 
@@ -83,13 +83,21 @@ body {
   height: 100%;
 }
 
-.main__nav {
-  flex: 0 0 200px;
-  max-width: 200px; /* For IE11, because 'flex-basis' in IE doesn't account for box-sizing:border-box and paddings add additional width */
+.main__search-form {
+  border-right: 4px solid rgba(0, 155, 224, 0.4); /* rgb(0,155,224) = #009be0*/
+  flex: 0 0 25%;
+  max-width: 20%; /* For IE11, because 'flex-basis' in IE doesn't account for box-sizing:border-box and paddings add additional width */
   padding: 15px;
+  transition: border 0.2s, box-shadow 0.2s;
 }
 
-.nav__title {
+.main__search-form:hover {
+  border-right: 4px solid rgba(0, 93, 217, 0.5); /* rgb(0,93,217) = #005dd9*/
+  box-shadow: inset 2px 0px 10px 0px #005dd9;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.search-form__title {
   font-size: 20px;
 }
 
@@ -105,22 +113,12 @@ body {
   margin-bottom: 15px;
 }
 
-.main__search {
-  flex: 0 0 200px;
-  max-width: 200px; /* For IE11, because 'flex-basis' in IE doesn't account for box-sizing:border-box and paddings add additional width */
-  padding: 15px;
-}
-
-.search__title {
-  font-size: 20px;
-}
-
 /*---------------------------------
   footer
 ----------------------------------- */
 .footer {
   background-color: #cdccce;
-  box-shadow: -5px -5px 10px 0px #009be0;
+  box-shadow: 0px -5px 10px 0px #009be0;
   flex: 0 1 auto;
   padding: 25px;
   text-align: center;
@@ -129,7 +127,7 @@ body {
 }
 
 .footer:hover {
-  box-shadow: -5px -5px 10px 0px #005dd9;
+  box-shadow: 0px -5px 10px 0px #005dd9;
   transition: box-shadow 0.2s;
 }
 
@@ -171,13 +169,16 @@ body {
     flex-direction: column;
   }
 
-  .main__nav {
+  .main__search-form {
+    border-bottom: 4px solid rgba(0, 155, 224, 0.4); /* rgb(0,155,224) = #009be0*/
+    border-right: none;
     flex: 0 0 auto;
     max-width: none;
   }
-
-  .main__search {
-    flex: 0 0 auto;
-    max-width: none;
+  
+  .main__search-form:hover {
+    border-bottom: 4px solid rgba(0, 93, 217, 0.5); /* rgb(0,93,217) = #005dd9*/
+    border-right: none;
+    box-shadow: inset 0px 2px 10px 0px #005dd9;
   }
 }
