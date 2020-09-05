@@ -1,3 +1,8 @@
+@font-face {
+  font-family: edo_sz;
+  src: url(../fonts/edosz.ttf);
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -19,8 +24,8 @@ body {
 }
 
 .header__logo {
-  margin-left: 40px;
   height: 100px;
+  margin-left: 40px;
 }
 
 .header__logo img {
@@ -32,9 +37,11 @@ body {
 }
 
 .header__nav li {
+  color: #009be0;
   cursor: pointer;
   display: block;
   float: left;
+  font-family: edo_sz, cursive;
   font-size: 30px;
   margin-right: 40px;
   padding: 10px;
