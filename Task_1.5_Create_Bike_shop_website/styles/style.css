@@ -19,13 +19,28 @@ body {
 .header {
   align-items: center;
   background-color: #cdccce;
+  box-shadow: 5px 5px 10px 0px #009be0;
   display: flex;
   padding: 5px;
+  transition: box-shadow 0.2s;
+  z-index: 1;
+}
+
+.header:hover {
+  box-shadow: 5px 5px 10px 0px #005dd9;
+  transition: box-shadow 0.2s;
 }
 
 .header__logo {
   height: 100px;
   margin-left: 40px;
+  transition: filter 0.2s, -webkit-filter 0.2s;
+}
+
+.header__logo:hover {
+  filter: drop-shadow(1px 1px 5px #005dd9);
+  -webkit-filter: drop-shadow(1px 1px 5px #005dd9);
+  transition: filter 0.2s, -webkit-filter 0.2s;
 }
 
 .header__logo img {
@@ -46,6 +61,13 @@ body {
   margin-right: 40px;
   padding: 10px;
   text-transform: uppercase;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.header__nav li:hover {
+  color: #005dd9;
+  text-shadow: 2px 2px 15px #005dd9;
+  transition: color 0.2s, text-shadow 0.2s;
 }
 
 /*---------------------------------
