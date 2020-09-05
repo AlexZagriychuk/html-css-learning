@@ -4,18 +4,41 @@ body {
   font-size: 20px;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 /*---------------------------------
   header
 ----------------------------------- */
 .header {
+  align-items: center;
   background-color: #cdccce;
-  flex: 0 1 auto;
-  padding: 25px;
-  text-align: center;
+  display: flex;
+  padding: 5px;
 }
 
-.header__title {
-  font-size: 25px;
+.header__logo {
+  margin-left: 40px;
+  height: 100px;
+}
+
+.header__logo img {
+  height: 100%;
+}
+
+.header__nav {
+  margin-left: auto;
+}
+
+.header__nav li {
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-size: 30px;
+  margin-right: 40px;
+  padding: 10px;
+  text-transform: uppercase;
 }
 
 /*---------------------------------
