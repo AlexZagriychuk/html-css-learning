@@ -73,6 +73,13 @@ body {
 /*---------------------------------
   main
 ----------------------------------- */
+.main-and-footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+}
+
 .main {
   display: block; /* IE11 support for main tag */
   flex: 1 0 auto;
@@ -136,6 +143,7 @@ body {
   background-color: #cdccce;
   box-shadow: 0px -5px 10px 0px #009be0;
   flex: 0 1 auto;
+  margin-top: auto; /* pushing footer to the bottom if .main does not have enough content */
   padding: 25px;
   text-align: center;
   transition: box-shadow 0.2s;
