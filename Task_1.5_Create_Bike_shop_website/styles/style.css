@@ -6,6 +6,7 @@
 body {
   display: flex;
   flex-direction: column;
+  font-family: cursive;
   font-size: 20px;
 }
 
@@ -140,7 +141,6 @@ body {
   main > contact-us page
 ----------------------------------- */
 .main__contact-us {
-  font-family: cursive;
   font-size: 20px;
   margin: 0px auto 30px auto;
   max-width: 767px;
@@ -195,6 +195,30 @@ body {
 .main__contact-us-form button:hover {
   background-color: #005dd9;
   box-shadow: 0px 0px 20px 0px #005dd9;
+}
+
+/*---------------------------------
+  main > about-us page
+----------------------------------- */
+.main__about-us {
+  font-size: 20px;
+  margin: 0px auto 30px auto;
+  max-width: 1024px;
+  padding: 10px;
+}
+
+.main__about-us p,
+.about-us__contact-info h2 {
+  margin-top: 40px;
+}
+
+.about-us__contact-info a {
+  display: block;
+  margin-top: 10px;
+}
+
+#google-map {
+  margin-top: 10px;
 }
 
 /*---------------------------------
