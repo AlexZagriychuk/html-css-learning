@@ -68,6 +68,11 @@ body {
   transition: color 0.2s, text-shadow 0.2s;
 }
 
+.nav__current-page,
+.nav__current-page:hover {
+  text-decoration: overline;
+}
+
 /*---------------------------------
   main
 ----------------------------------- */
