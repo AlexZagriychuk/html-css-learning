@@ -149,12 +149,13 @@ body {
 
 .footer__icons ul {
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   margin-bottom: 15px;
 }
 
 .footer__icons li {
-  margin-left: 10px;
+  margin: 0px 0px 10px 10px;
 }
 
 .footer__icons li:first-child {
@@ -165,7 +166,10 @@ body {
 .footer__icons a {
   color: #000;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
   font-size: 25px;
+  line-height: 100%;
   transition: color 0.2s, text-shadow 0.2s;
 }
 
@@ -174,6 +178,10 @@ body {
   color: #005dd9;
   text-shadow: 0px 0px 40px #005dd9;
   transition: color 0.2s, text-shadow 0.2s;
+}
+
+.footer__icons li span {
+  font-size: 15px;
 }
 
 .footer__copyright {
@@ -229,5 +237,10 @@ body {
   /* ".cards__card" can`t be used here because we need to override "cards__card:nth-child()" from the other @media rules */
   .cards__card:nth-child(1n) {
     margin-left: 0px;
+  }
+
+  .footer__contacts ul {
+    flex-flow: column;
+    margin-top: 20px;
   }
 }
