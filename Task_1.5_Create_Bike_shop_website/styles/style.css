@@ -32,6 +32,9 @@ body {
 .header__logo {
   height: 100px;
   margin-left: 40px;
+}
+
+.header__logo a {
   transition: filter 0.2s, -webkit-filter 0.2s;
 }
 
