@@ -340,21 +340,81 @@ body {
   }
 
   .header__nav-burger {
+    background-color: transparent;
     display: block;
-    width: 40px;
-    height: 40px;
-    background-color: yellow;
+    height: 50px;
+    width: 50px;
     margin: 0 40px 0 auto;
   }
 
   .header__nav-burger label {
-    display: block;
+    color: #009be0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     width: 100%;
+    transition: color 0.2s;
+  }
+  
+  .header__nav-burger label:hover,
+  .header__nav-burger label:focus {
+    color: #005dd9;
+    transition: color 0.2s;
   }
 
-  .header__nav-burger:hover {
-    background-color: turquoise;
+  .header__nav-burger label span {
+    position: relative;
+    background-color: currentColor;
+    display: block;
+    height: 5px;
+    width: 80%;
+    transition-property: top, transform, box-shadow, background-color;
+    transition-duration: 0.2s;
+  }
+
+  .header__nav-burger label span:before,
+  .header__nav-burger label span:after {
+    position: absolute;
+    top: -10px;
+    background-color: currentColor;
+    content: "";
+    display: block;
+    height: 5px;
+    width: 100%;
+    transition-property: top, transform, box-shadow, background-color;
+    transition-duration: 0.2s;
+  }
+
+  .header__nav-burger label span:after {
+    top: 10px;
+  }
+
+  .header__nav-wrapper input:checked ~ .header__nav-burger label span {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .header__nav-wrapper input:checked ~ .header__nav-burger label span:before,
+  .header__nav-wrapper input:checked ~ .header__nav-burger label span:after {
+    top: 0;
+    transform: rotate(-45deg);
+    transition-property: top, transform, box-shadow, background-color;
+    transition-duration: 0.2s;
+  }
+
+  .header__nav-wrapper input:checked ~ .header__nav-burger label span:after {
+    transform: rotate(45deg);
+  }
+
+  .header__nav-burger label:hover span,
+  .header__nav-burger label:focus span,
+  .header__nav-burger label:hover span:before,
+  .header__nav-burger label:focus span:before,
+  .header__nav-burger label:hover span:after,
+  .header__nav-burger label:focus span:after {
+    box-shadow: 0px 0px 10px 0px #005dd9;
   }
 
   .header__nav {
