@@ -18,13 +18,19 @@
         <img src="../images/logo.png" alt="The Bike Shop">
       </a>
     </div>
-    <nav class="header__nav">
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a class="nav__current-page" href="#">About us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="header__nav-wrapper">
+      <input id="nav-menu" type="checkbox">
+      <nav class="header__nav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a class="nav__current-page" href="#">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="header__nav-burger" type="menu">
+        <label for="nav-menu"></label>
+      </button>
+    </div>
   </header>
 
   <div class="main-and-footer-wrapper">
