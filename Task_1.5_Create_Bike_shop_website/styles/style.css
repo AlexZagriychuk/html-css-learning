@@ -1,0 +1,577 @@
+@font-face {
+  font-family: edo_sz;
+  src: url(../fonts/edosz.ttf);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: cursive;
+  font-size: 20px;
+  line-height: 2rem;
+}
+
+/*---------------------------------
+  header
+----------------------------------- */
+.header {
+  align-items: center;
+  background-color: #cdccce;
+  box-shadow: 0px 5px 10px 0px #009be0;
+  display: flex;
+  padding: 5px;
+  transition: box-shadow 0.2s;
+  z-index: 1;
+}
+
+.header:hover {
+  box-shadow: 0px 5px 10px 0px #005dd9;
+  transition: box-shadow 0.2s;
+}
+
+.header__logo {
+  height: 100px;
+  margin-left: 40px;
+}
+
+.header__logo a {
+  transition: filter 0.2s, -webkit-filter 0.2s;
+}
+
+.header__logo a:hover,
+.header__logo a:focus {
+  filter: drop-shadow(1px 1px 5px #005dd9);
+  -webkit-filter: drop-shadow(1px 1px 5px #005dd9);
+  transition: filter 0.2s, -webkit-filter 0.2s;
+}
+
+.header__logo img {
+  height: 100%;
+}
+
+.header__nav-wrapper {
+  margin-left: auto;
+}
+
+.header__nav ul {
+  display: flex;
+}
+
+.header__nav li a {
+  color: #009be0;
+  font-family: edo_sz, cursive;
+  font-size: 30px;
+  margin-right: 40px;
+  padding: 10px;
+  text-transform: uppercase;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.header__nav li a:hover,
+.header__nav li a:focus {
+  color: #005dd9;
+  text-shadow: 2px 2px 15px #005dd9;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.nav__current-page,
+.nav__current-page:hover {
+  text-decoration: overline; /* must specify it on hover as well, because overwise text-shadow will kill overline on hover */
+}
+
+.header__nav-wrapper input,
+.header__nav-burger {
+  display: none;
+}
+
+/*---------------------------------
+  main
+----------------------------------- */
+.main-and-footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+}
+
+.main {
+  display: block; /* IE11 support for main tag */
+  flex: 1 0 auto;
+}
+
+.main__row {
+  display: flex;
+  height: 100%;
+}
+
+/*---------------------------------
+  main > home page
+----------------------------------- */
+.main__search-form {
+  border-right: 4px solid rgba(0, 155, 224, 0.4); /* rgb(0,155,224) = #009be0*/
+  flex: 0 0 25%;
+  max-width: 20%; /* For IE11, because 'flex-basis' in IE doesn't account for box-sizing:border-box and paddings add additional width */
+  padding: 15px;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.main__search-form:hover {
+  border-right: 4px solid rgba(0, 93, 217, 0.5); /* rgb(0,93,217) = #005dd9*/
+  box-shadow: inset 2px 0px 10px 0px #005dd9;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.search-form__title {
+  font-size: 20px;
+}
+
+.main__content {
+  background-color: #fffffe;
+  flex: 1 1 auto;
+  padding: 15px;
+}
+
+.main__cards {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.cards__card {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  margin: 0px 0px 20px 20px;
+  padding: 10px;
+  min-height: 300px;
+  /* ((100% - this.margin-left * 2 {2 is number of cards in the row - 1} / 3 {3 is number of cards in the row} */
+  width: calc((100% - 40px) / 3);
+  transition: box-shadow 0.2s;
+}
+
+.cards__card:nth-child(3n + 1) {
+  margin-left: 0px;
+}
+
+.cards__card:hover {
+  box-shadow: 2px 2px 10px 0px #009be0;
+  transition: box-shadow 0.2s;
+}
+
+.card__img {
+  width: 100%;
+}
+
+.card__img img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.card__brand-and-model {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  margin: 20px auto 0;
+  padding: 0 20px;
+  width: fit-content;
+}
+
+.card__brand-and-model label {
+  color: #808080;
+  font-size: 16px;
+}
+
+.card__item-brand,
+.card__item-model {
+  display: flex;
+}
+
+.card__item-brand span,
+.card__item-model span {
+  margin-left: 10px;
+}
+
+.card__pricing {
+  margin: 30px auto 0;
+  display: flex;
+}
+
+.card__price {
+  color: #009be0;
+  font-size: 30px;
+}
+
+.card__old-price {
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M1 0 L0 1 L99 100 L100 99' stroke='%23878787' stroke-width='5' /></svg>");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%, auto;
+  color: #878787;
+  margin-left: 30px;
+  padding: 0;
+}
+
+.card__add-to-cart {
+  background-color: transparent;
+  border: 2px solid #009be0;
+  border-radius: 10px;
+  color: #000;
+  margin: 30px auto 20px;
+  padding: 5px;
+  min-width: 150px;
+  width: 50%;
+  text-align: center;
+}
+
+.card__add-to-cart:focus,
+.card__add-to-cart:hover {
+  box-shadow: 0px 0px 10px 2px #005dd9, inset 0px 0px 10px 2px #005dd9;
+}
+
+/*---------------------------------
+  main > contact-us page
+----------------------------------- */
+.main__contact-us {
+  font-size: 20px;
+  margin: 0px auto 30px auto;
+  max-width: 767px;
+  padding: 10px;
+}
+
+.main__contact-us-form {
+  display: flex;
+  flex-flow: column;
+}
+
+.main__contact-us-form p {
+  margin: 40px 0px 40px 0px;
+}
+
+.main__contact-us-form label {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.main__contact-us-form input,
+.main__contact-us-form textarea {
+  border: 1px solid #009be0;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-bottom: 25px;
+  padding: 5px;
+}
+
+.main__contact-us-form input:focus,
+.main__contact-us-form textarea:focus {
+  border: 1px solid #005dd9;
+  box-shadow: 0px 0px 10px 0px #005dd9;
+}
+
+.main__contact-us-form textarea {
+  height: 200px;
+  min-height: 100px;
+  resize: vertical;
+}
+
+.main__contact-us-form button {
+  background-color: #009be0;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 20px;
+  margin: 10px auto;
+  padding: 10px 50px;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.main__contact-us-form button:focus,
+.main__contact-us-form button:hover {
+  background-color: #005dd9;
+  box-shadow: 0px 0px 20px 0px #005dd9;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.main__contact-us-form button:active {
+  transform: translate(1px, 1px);
+  box-shadow: -1px -1px 20px 0px #005dd9;
+}
+
+/*---------------------------------
+  main > about-us page
+----------------------------------- */
+.main__about-us {
+  font-size: 20px;
+  margin: 0px auto 30px auto;
+  max-width: 1024px;
+  padding: 10px;
+}
+
+.main__about-us p,
+.about-us__contact-info h2 {
+  margin-top: 40px;
+}
+
+.about-us__contact-info a {
+  display: block;
+  margin-top: 10px;
+  color: #009be0;
+}
+
+.about-us__contact-info a span {
+  padding: 0 5px;
+}
+
+.about-us__contact-info a:focus span {
+  outline: 1px solid #009be0;
+}
+
+#google-map {
+  margin-top: 10px;
+}
+
+/*---------------------------------
+  footer
+----------------------------------- */
+.footer {
+  background-color: #cdccce;
+  box-shadow: 0px -5px 10px 0px #009be0;
+  flex: 0 1 auto;
+  margin-top: auto; /* pushing footer to the bottom if .main does not have enough content */
+  padding: 25px;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+.footer:hover {
+  box-shadow: 0px -5px 10px 0px #005dd9;
+  transition: box-shadow 0.2s;
+}
+
+.footer__icons ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.footer__icons li {
+  margin: 0px 0px 10px 10px;
+}
+
+.footer__icons li:first-child {
+  margin-left: 0px;
+}
+
+.footer__icons i,
+.footer__icons a {
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  line-height: 100%;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.footer__icons i:hover,
+.footer__icons a:hover,
+.footer__icons i:focus,
+.footer__icons a:focus {
+  color: #005dd9;
+  text-shadow: 0px 0px 40px #005dd9;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.footer__icons li span {
+  font-size: 15px;
+}
+
+.footer__copyright {
+  font-size: 15px;
+}
+
+/*---------------------------------
+  media
+----------------------------------- */
+@media screen and (max-width: 1024px) {
+  .header__nav li a {
+    margin-right: 30px;
+  }
+
+  /* only 2 cards in the row (2 cards__card) */
+  .cards__card {
+    width: calc((100% - 20px) / 2); /* ((100% - this.margin-left / 2 {2 is number of cards in the row} */
+  }
+
+  /* ".cards__card" can`t be used here because we need to override "cards__card:nth-child()" from the other @media rules */
+  .cards__card:nth-child(1n) {
+    margin-left: 0px;
+  }
+
+  .cards__card:nth-child(2n + 2) {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    position: relative;
+  }
+
+  .header__nav-burger {
+    background-color: transparent;
+    display: block;
+    height: 50px;
+    width: 50px;
+    margin: 0 40px 0 auto;
+  }
+
+  .header__nav-burger label {
+    color: #009be0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    transition: color 0.2s;
+  }
+
+  .header__nav-burger label:hover,
+  .header__nav-burger label:focus {
+    color: #005dd9;
+    transition: color 0.2s;
+  }
+
+  .header__nav-burger label span {
+    position: relative;
+    background-color: currentColor;
+    display: block;
+    height: 5px;
+    width: 80%;
+    transition-property: top, transform, box-shadow, background-color;
+    transition-duration: 0.2s;
+  }
+
+  .header__nav-burger label span:before,
+  .header__nav-burger label span:after {
+    position: absolute;
+    top: -10px;
+    background-color: currentColor;
+    content: "";
+    display: block;
+    height: 5px;
+    width: 100%;
+    transition-property: top, transform, box-shadow, background-color;
+    transition-duration: 0.2s;
+  }
+
+  .header__nav-burger label span:after {
+    top: 10px;
+  }
+
+  .header__nav-wrapper input:checked ~ .header__nav-burger label span {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .header__nav-wrapper input:checked ~ .header__nav-burger label span:before,
+  .header__nav-wrapper input:checked ~ .header__nav-burger label span:after {
+    top: 0;
+    transform: rotate(-45deg);
+    transition-property: top, transform, box-shadow, background-color;
+    transition-duration: 0.2s;
+  }
+
+  .header__nav-wrapper input:checked ~ .header__nav-burger label span:after {
+    transform: rotate(45deg);
+  }
+
+  .header__nav-burger label:hover span,
+  .header__nav-burger label:focus span,
+  .header__nav-burger label:hover span:before,
+  .header__nav-burger label:focus span:before,
+  .header__nav-burger label:hover span:after,
+  .header__nav-burger label:focus span:after {
+    box-shadow: 0px 0px 10px 0px #005dd9;
+  }
+
+  .header__nav {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    height: 0;
+    width: 100%;
+    backdrop-filter: opacity(10%) blur(1px);
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    transition: all 0.5s;
+    visibility: hidden;
+  }
+
+  .header__nav-wrapper input:checked ~ .header__nav {
+    height: calc(100vh - 100%);
+    padding-top: 20px;
+    transition: all 0.5s;
+    visibility: visible;
+  }
+
+  .header__nav ul {
+    flex-flow: column;
+    float: right;
+  }
+
+  .header__nav li {
+    margin-bottom: 20px;
+  }
+
+  .header__nav li a {
+    padding-left: 20px;
+  }
+
+  .header__nav li a:not(.nav__current-page) {
+    border-left: 5px solid transparent;
+  }
+  .header__nav li a.nav__current-page {
+    border-left: 5px solid #009be0;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+
+  .header__nav li a.nav__current-page:hover {
+    border-color: #005dd9;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+
+  .main__row {
+    flex-direction: column;
+  }
+
+  .main__search-form {
+    border-bottom: 4px solid rgba(0, 155, 224, 0.4); /* rgb(0,155,224) = #009be0*/
+    border-right: none;
+    flex: 0 0 auto;
+    max-width: none;
+  }
+
+  .main__search-form:hover {
+    border-bottom: 4px solid rgba(0, 93, 217, 0.5); /* rgb(0,93,217) = #005dd9*/
+    border-right: none;
+    box-shadow: inset 0px 2px 10px 0px #005dd9;
+  }
+
+  /* only 1 card in the row (1 cards__card) */
+  .cards__card {
+    width: 100%;
+  }
+
+  /* ".cards__card" can`t be used here because we need to override "cards__card:nth-child()" from the other @media rules */
+  .cards__card:nth-child(1n) {
+    margin-left: 0px;
+  }
+
+  .footer__contacts ul {
+    flex-flow: column;
+    margin-top: 20px;
+  }
+}
