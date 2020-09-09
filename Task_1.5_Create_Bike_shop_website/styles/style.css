@@ -385,6 +385,7 @@ body {
   transition: color .2s, text-shadow .2s;
 }
 
+.footer__icons li address,
 .footer__icons li span {
   font-size: 15px;
 }
