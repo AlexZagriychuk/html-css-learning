@@ -147,11 +147,11 @@ body {
 
 .cards__card {
   display: flex;
-  flex-flow: column;
+  flex-flow: row wrap;
+  align-items: flex-start;
   justify-content: space-between;
   margin: 0 0 20px 20px;
   padding: 10px;
-  min-height: 300px;
   /* ((100% - this.margin-left * 2 {2 is number of cards in the row - 1} - few px for IE11 glitches / 3 {3 is number of cards in the row} */
   width: calc((100% - 45px) / 3);
   transition: box-shadow .2s;
@@ -167,8 +167,9 @@ body {
 }
 
 .card__img {
-  width: 100%;
+  margin-bottom: 20px;
   min-height: 1px; /* IE11 workaround to avoid big height of this block with lots of white space */
+  width: 100%;
 }
 
 .card__img img {
@@ -179,8 +180,9 @@ body {
 .card__brand-and-model {
   display: flex;
   flex-flow: column;
-  margin: 20px auto 0;
+  margin: auto auto 30px;
   padding: 0 20px;
+  width: 100%;
 }
 
 .card__item-brand,
@@ -198,9 +200,10 @@ body {
 }
 
 .card__pricing {
-  margin: 30px auto 0;
+  margin: auto auto 30px;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .card__price {
@@ -220,7 +223,7 @@ body {
   border: 2px solid #009be0;
   border-radius: 10px;
   color: #000;
-  margin: 30px auto 20px;
+  margin: auto auto 20px;
   padding: 5px;
   min-width: 150px;
   width: 50%;
