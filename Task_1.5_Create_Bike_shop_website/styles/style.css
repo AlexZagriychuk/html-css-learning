@@ -449,81 +449,74 @@ body {
 
   .header__nav-burger {
     background-color: transparent;
-    display: block;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 50px;
     width: 50px;
     margin: 0 40px 0 auto;
   }
 
-  .header__nav-burger label {
-    color: #009be0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    transition: color .2s;
-  }
-
-  .header__nav-burger label:hover,
-  .header__nav-burger label:focus {
-    color: #005dd9;
-    transition: color .2s;
-  }
-
-  .header__nav-burger label span {
+  .header__nav-burger span {
     position: relative;
-    background-color: currentColor;
+    background-color: #009be0;
     display: block;
     height: 5px;
     width: 80%;
-    transition-property: top, transform, box-shadow, background-color;
-    transition-duration: .2s;
   }
 
-  .header__nav-burger label span:before,
-  .header__nav-burger label span:after {
+  .header__nav-burger span:before,
+  .header__nav-burger span:after {
     position: absolute;
     top: -10px;
-    background-color: currentColor;
+    background-color: #009be0;
     content: "";
     display: block;
     height: 5px;
     width: 100%;
-    transition-property: top, transform, box-shadow, background-color;
-    transition-duration: .2s;
   }
 
-  .header__nav-burger label span:after {
+  .header__nav-burger span:after {
     top: 10px;
   }
 
-  .header__nav-wrapper input:checked ~ .header__nav-burger label span {
+  .nav-burger__active span {
     background-color: transparent;
-    box-shadow: none;
   }
 
-  .header__nav-wrapper input:checked ~ .header__nav-burger label span:before,
-  .header__nav-wrapper input:checked ~ .header__nav-burger label span:after {
+  .nav-burger__active span:before {
     top: 0;
     transform: rotate(-45deg);
-    transition-property: top, transform, box-shadow, background-color;
-    transition-duration: .2s;
   }
 
-  .header__nav-wrapper input:checked ~ .header__nav-burger label span:after {
+  .nav-burger__active span:after {
+    top: 0;
     transform: rotate(45deg);
   }
 
-  .header__nav-burger label:hover span,
-  .header__nav-burger label:focus span,
-  .header__nav-burger label:hover span:before,
-  .header__nav-burger label:focus span:before,
-  .header__nav-burger label:hover span:after,
-  .header__nav-burger label:focus span:after {
+  .header__nav-burger span,
+  .header__nav-burger span:before,
+  .header__nav-burger span:after {
+    transition-property: background-color, box-shadow, top, transform;
+    transition-duration: 0.2s;
+  }
+
+  .header__nav-burger:hover span,
+  .header__nav-burger:focus span,
+  .header__nav-burger:hover span:before,
+  .header__nav-burger:focus span:before,
+  .header__nav-burger:hover span:after,
+  .header__nav-burger:focus span:after {
+    background-color: #005dd9;
     box-shadow: 0 0 10px 0 #005dd9;
-    transition: box-shadow .2s;
+    transition-property: background-color, box-shadow, top, transform;
+    transition-duration: 0.2s;
+  }
+
+  .nav-burger__active:hover span {
+    background-color: transparent;
+    box-shadow: none;
   }
 
   .header__nav {
@@ -539,7 +532,7 @@ body {
     visibility: hidden;
   }
 
-  .header__nav-wrapper input:checked ~ .header__nav {
+  .nav-burger__active ~ .header__nav {
     height: 100vh; /* IE11 fix for transition, because "height: calc(100vh - 100%);" does not work */
     max-height: calc(100vh - 100%); /* IE11 fix for transition */
     padding-top: 20px;
