@@ -27,31 +27,30 @@
           <li><a class="nav__current-page" href="#">Contact</a></li>
         </ul>
       </nav>
-      <button class="header__nav-burger" type="menu">
+      <div class="header__nav-burger">
         <label for="nav-menu"><span></span></label>
-      </button>
+      </div>
     </div>
   </header>
 
   <div class="main-and-footer-wrapper">
     <main class="main">
-      <div class="main__row">
-        <div class="main__content">
-          <div class="main__contact-us">
-            <h1>Contact</h1>
+      <div class="main__contact-us">
+        <h1>Contact</h1>
 
-            <form class="main__contact-us-form" action="">
-              <p>If you have any questions, please feel free to contact us:</p>
-              <label for="contact-us__name">Your name:</label>
-              <input id="contact-us__name" type="text">
-              <label for="contact-us__email">Your email:</label>
-              <input id="contact-us__email" type="email">
-              <label for="contact-us__subject">Subject:</label>
-              <textarea name="subject" id="contact-us__subject" cols="30" rows="10"></textarea>
-              <button class="contact-us__submit" type="submit">Send</button>
-            </form>
+        <form class="main__contact-us-form" action="#">
+          <p>If you have any questions, please feel free to contact us:</p>
+          <label for="contact-us__name">Your name:</label>
+          <input id="contact-us__name" type="text">
+          <label for="contact-us__email">Your email:</label>
+          <input id="contact-us__email" type="email">
+          <label for="contact-us__subject">Subject:</label>
+          <textarea name="subject" id="contact-us__subject"></textarea>
+          <div class="contact-us__submit-btn">
+            <button type="submit">Send</button>
           </div>
-        </div>
+        </form>
+      </div>
     </main>
 
     <footer class="footer">
@@ -69,13 +68,12 @@
       </div>
       <div class="footer__icons footer__contacts">
         <ul>
-          <li><a class="icon-phone" href="tel:+1123-456-7890"><span>+1 123-456-7890</span></a></li>
-          <li><a class="icon-mail-alt" href="mailto: abc@example.com"><span>abc@example.com</span></a></li>
-          <li><a class="icon-location" href="about-us.html#our-address"><span>701 W Georgia St, Vancouver, BC V7Y
-                1G5</span></a></li>
+          <li><a class="icon-phone" href="tel:11234567890"><span>+1 123-456-7890</span></a></li>
+          <li><a class="icon-mail-alt" href="mailto:abc@example.com"><span>abc@example.com</span></a></li>
+          <li><a class="icon-location" href="about-us.html#our-address"><address>701 W Georgia St, Vancouver, BC V7Y1G5</address></a></li>
         </ul>
       </div>
-      <span class="footer__copyright">© The Bike Shop 2020</span>
+      <span class="footer__copyright">&copy; The Bike Shop 2020</span>
     </footer>
   </div>
 </body>
