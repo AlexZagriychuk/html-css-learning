@@ -141,7 +141,7 @@ body {
 
 .cards__card {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column;
   justify-content: space-between;
   margin: 0 0 20px 20px;
   padding: 10px;
@@ -172,11 +172,9 @@ body {
 
 .card__brand-and-model {
   display: flex;
-  flex-flow: column wrap;
-  justify-content: space-around;
+  flex-flow: column;
   margin: 20px auto 0;
   padding: 0 20px;
-  width: fit-content;
 }
 
 .card__item-brand,
@@ -196,6 +194,7 @@ body {
 .card__pricing {
   margin: 30px auto 0;
   display: flex;
+  justify-content: center;
 }
 
 .card__price {
@@ -204,10 +203,7 @@ body {
 }
 
 .card__old-price {
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M1 0 L0 1 L99 100 L100 99' stroke='%23878787' stroke-width='5' /></svg>");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100% 100%, auto;
+  background: linear-gradient(to top right,#ffffff 48%,#878787 50%,#ffffff 52%);
   color: #878787;
   margin-left: 30px;
   padding: 0;
@@ -275,6 +271,10 @@ body {
   height: 200px;
   min-height: 100px;
   resize: vertical;
+}
+
+.contact-us__submit-btn {
+  display: flex;
 }
 
 .main__contact-us-form button {
