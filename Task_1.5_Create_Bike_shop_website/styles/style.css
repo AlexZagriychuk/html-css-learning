@@ -71,6 +71,7 @@ body {
   font-size: 30px;
   margin-right: 40px;
   padding: 10px;
+  position: relative;
   text-transform: uppercase;
   transition: color .2s, text-shadow .2s;
 }
@@ -82,10 +83,21 @@ body {
   transition: color .2s, text-shadow .2s;
 }
 
-.nav__current-page,
-.nav__current-page:hover {
-  text-decoration: overline; /* must specify it on hover as well, because overwise text-shadow will kill overline on hover */
-  transition: text-decoration .2s;
+.nav__current-page:before {
+  background-color: #009be0;
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 10px; /* .header__nav li a.padding */
+  right: 10px; /* .header__nav li a.padding */
+  height: 3px;
+  transition: background-color .2s, box-shadow .2s;
+}
+
+.nav__current-page:hover:before {
+  background-color: #005dd9;
+  box-shadow: 0 0px 15px 0 #005dd9;
+  transition: background-color .2s, box-shadow .2s;
 }
 
 .header__nav-wrapper input,
@@ -550,19 +562,11 @@ body {
     padding-left: 20px;
   }
 
-  .header__nav li a:not(.nav__current-page) {
-    border-left: 5px solid transparent;
-  }
-  .header__nav li a.nav__current-page {
-    border-left: 5px solid #009be0;
-    text-decoration: none;
-    transition: border-color .2s;
-  }
-
-  .header__nav li a.nav__current-page:hover {
-    border-color: #005dd9;
-    text-decoration: none;
-    transition: border-color .2s;
+  .nav__current-page:before {
+    left: 5px;
+    top: 0;
+    height: 100%;
+    width: 3px;
   }
 
   .main__row {
