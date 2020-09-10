@@ -274,7 +274,6 @@ body {
 }
 
 .main__contact-us-form textarea {
-  height: 200px;
   min-height: 100px;
   resize: vertical;
 }
@@ -537,10 +536,11 @@ body {
   .header__nav ul {
     flex-flow: column;
     float: right;
+    max-width: 100%; /* to make sure long text will not overflow width in IE11 */
   }
 
   .header__nav li {
-    margin-bottom: 20px;
+    display: flex; /* to correctly present long text in multi-line format */
   }
 
   .header__nav li a {
