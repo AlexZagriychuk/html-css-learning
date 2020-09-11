@@ -35,6 +35,10 @@ body {
   padding: 20px;
 }
 
+.tasks__task + .tasks__task {
+  border-top: 2px solid #F7F8F9;
+}
+
 .task__checkbox {
   display: none;
 }
@@ -65,5 +69,13 @@ body {
 }
 
 .task__description {
+  color: #8A999A;
+  cursor: pointer;
+  font-weight: 700;
   margin-left: 20px;
+}
+
+.task__checkbox:checked ~ .task__description {
+  color: #3CC070;
+  text-decoration: line-through;
 }
