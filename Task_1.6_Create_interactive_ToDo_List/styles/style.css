@@ -11,14 +11,22 @@ body {
 }
 
 .tasks {
-  border: 1px solid #D0D0D0;
+  border: 2px solid #D0D0D0;
   border-radius: 5px;
   margin: 10px auto;
 }
 
+.tasks__header {
+  background-image: linear-gradient(#FBFBFB, #DFDFDF);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
 .tasks__header h1 {
+  color: #5F6B78;
   font-size: 24px;
-  padding: 20px;
+  font-weight: 700;
+  padding: 15px;
 }
 
 .tasks__task {
