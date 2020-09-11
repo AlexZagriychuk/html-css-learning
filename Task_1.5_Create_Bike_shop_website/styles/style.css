@@ -71,6 +71,7 @@ body {
   font-size: 30px;
   margin-right: 40px;
   padding: 10px;
+  position: relative;
   text-transform: uppercase;
   transition: color .2s, text-shadow .2s;
 }
@@ -82,10 +83,21 @@ body {
   transition: color .2s, text-shadow .2s;
 }
 
-.nav__current-page,
-.nav__current-page:hover {
-  text-decoration: overline; /* must specify it on hover as well, because overwise text-shadow will kill overline on hover */
-  transition: text-decoration .2s;
+.nav__current-page:before {
+  background-color: #009be0;
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 10px; /* .header__nav li a.padding */
+  right: 10px; /* .header__nav li a.padding */
+  height: 3px;
+  transition: background-color .2s, box-shadow .2s;
+}
+
+.nav__current-page:hover:before {
+  background-color: #005dd9;
+  box-shadow: 0 0px 15px 0 #005dd9;
+  transition: background-color .2s, box-shadow .2s;
 }
 
 .header__nav-wrapper input,
@@ -147,11 +159,11 @@ body {
 
 .cards__card {
   display: flex;
-  flex-flow: column;
+  flex-flow: row wrap;
+  align-items: flex-start;
   justify-content: space-between;
   margin: 0 0 20px 20px;
   padding: 10px;
-  min-height: 300px;
   /* ((100% - this.margin-left * 2 {2 is number of cards in the row - 1} - few px for IE11 glitches / 3 {3 is number of cards in the row} */
   width: calc((100% - 45px) / 3);
   transition: box-shadow .2s;
@@ -167,8 +179,9 @@ body {
 }
 
 .card__img {
-  width: 100%;
+  margin-bottom: 20px;
   min-height: 1px; /* IE11 workaround to avoid big height of this block with lots of white space */
+  width: 100%;
 }
 
 .card__img img {
@@ -179,8 +192,9 @@ body {
 .card__brand-and-model {
   display: flex;
   flex-flow: column;
-  margin: 20px auto 0;
+  margin: auto auto 30px;
   padding: 0 20px;
+  width: 100%;
 }
 
 .card__item-brand,
@@ -198,9 +212,10 @@ body {
 }
 
 .card__pricing {
-  margin: 30px auto 0;
+  margin: auto auto 30px;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .card__price {
@@ -220,7 +235,7 @@ body {
   border: 2px solid #009be0;
   border-radius: 10px;
   color: #000;
-  margin: 30px auto 20px;
+  margin: auto auto 20px;
   padding: 5px;
   min-width: 150px;
   width: 50%;
@@ -274,7 +289,6 @@ body {
 }
 
 .main__contact-us-form textarea {
-  height: 200px;
   min-height: 100px;
   resize: vertical;
 }
@@ -435,81 +449,74 @@ body {
 
   .header__nav-burger {
     background-color: transparent;
-    display: block;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 50px;
     width: 50px;
     margin: 0 40px 0 auto;
   }
 
-  .header__nav-burger label {
-    color: #009be0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    transition: color .2s;
-  }
-
-  .header__nav-burger label:hover,
-  .header__nav-burger label:focus {
-    color: #005dd9;
-    transition: color .2s;
-  }
-
-  .header__nav-burger label span {
+  .header__nav-burger span {
     position: relative;
-    background-color: currentColor;
+    background-color: #009be0;
     display: block;
     height: 5px;
     width: 80%;
-    transition-property: top, transform, box-shadow, background-color;
-    transition-duration: .2s;
   }
 
-  .header__nav-burger label span:before,
-  .header__nav-burger label span:after {
+  .header__nav-burger span:before,
+  .header__nav-burger span:after {
     position: absolute;
     top: -10px;
-    background-color: currentColor;
+    background-color: #009be0;
     content: "";
     display: block;
     height: 5px;
     width: 100%;
-    transition-property: top, transform, box-shadow, background-color;
-    transition-duration: .2s;
   }
 
-  .header__nav-burger label span:after {
+  .header__nav-burger span:after {
     top: 10px;
   }
 
-  .header__nav-wrapper input:checked ~ .header__nav-burger label span {
+  .nav-burger__active span {
     background-color: transparent;
-    box-shadow: none;
   }
 
-  .header__nav-wrapper input:checked ~ .header__nav-burger label span:before,
-  .header__nav-wrapper input:checked ~ .header__nav-burger label span:after {
+  .nav-burger__active span:before {
     top: 0;
     transform: rotate(-45deg);
-    transition-property: top, transform, box-shadow, background-color;
-    transition-duration: .2s;
   }
 
-  .header__nav-wrapper input:checked ~ .header__nav-burger label span:after {
+  .nav-burger__active span:after {
+    top: 0;
     transform: rotate(45deg);
   }
 
-  .header__nav-burger label:hover span,
-  .header__nav-burger label:focus span,
-  .header__nav-burger label:hover span:before,
-  .header__nav-burger label:focus span:before,
-  .header__nav-burger label:hover span:after,
-  .header__nav-burger label:focus span:after {
+  .header__nav-burger span,
+  .header__nav-burger span:before,
+  .header__nav-burger span:after {
+    transition-property: background-color, box-shadow, top, transform;
+    transition-duration: 0.2s;
+  }
+
+  .header__nav-burger:hover span,
+  .header__nav-burger:focus span,
+  .header__nav-burger:hover span:before,
+  .header__nav-burger:focus span:before,
+  .header__nav-burger:hover span:after,
+  .header__nav-burger:focus span:after {
+    background-color: #005dd9;
     box-shadow: 0 0 10px 0 #005dd9;
-    transition: box-shadow .2s;
+    transition-property: background-color, box-shadow, top, transform;
+    transition-duration: 0.2s;
+  }
+
+  .nav-burger__active:hover span {
+    background-color: transparent;
+    box-shadow: none;
   }
 
   .header__nav {
@@ -525,7 +532,7 @@ body {
     visibility: hidden;
   }
 
-  .header__nav-wrapper input:checked ~ .header__nav {
+  .nav-burger__active ~ .header__nav {
     height: 100vh; /* IE11 fix for transition, because "height: calc(100vh - 100%);" does not work */
     max-height: calc(100vh - 100%); /* IE11 fix for transition */
     padding-top: 20px;
@@ -537,29 +544,22 @@ body {
   .header__nav ul {
     flex-flow: column;
     float: right;
+    max-width: 100%; /* to make sure long text will not overflow width in IE11 */
   }
 
   .header__nav li {
-    margin-bottom: 20px;
+    display: flex; /* to correctly present long text in multi-line format */
   }
 
   .header__nav li a {
     padding-left: 20px;
   }
 
-  .header__nav li a:not(.nav__current-page) {
-    border-left: 5px solid transparent;
-  }
-  .header__nav li a.nav__current-page {
-    border-left: 5px solid #009be0;
-    text-decoration: none;
-    transition: border-color .2s;
-  }
-
-  .header__nav li a.nav__current-page:hover {
-    border-color: #005dd9;
-    text-decoration: none;
-    transition: border-color .2s;
+  .nav__current-page:before {
+    left: 5px;
+    top: 0;
+    height: 100%;
+    width: 3px;
   }
 
   .main__row {
