@@ -28,7 +28,20 @@ body {
   text-transform: uppercase;
 }
 
-.button span:before {
+.button span:before,
+.button span:after {
+  background: url("../icons/star.svg") no-repeat top / cover;
+  content: '';
   position: absolute;
+  top: calc(50% - 9px); /* should be 50% - this.height / 2 */
+  height: 18px;
+  width: 18px;
+}
 
+.button span:before {
+  left: 20px;
+}
+
+.button span:after {
+  right: 20px;
 }
