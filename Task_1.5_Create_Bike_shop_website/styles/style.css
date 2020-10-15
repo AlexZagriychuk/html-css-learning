@@ -15,14 +15,17 @@ body {
   position: relative; 
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 1900px;
+}
+
 /*---------------------------------
   header
 ----------------------------------- */
 .header {
-  align-items: center;
   background-color: #cdccce;
   box-shadow: 0 5px 10px 0 #009be0;
-  display: flex;
   padding: 5px;
   transition: box-shadow .2s;
   z-index: 1;
@@ -31,6 +34,11 @@ body {
 .header:hover {
   box-shadow: 0 5px 10px 0 #005dd9;
   transition: box-shadow .2s;
+}
+
+.header .container {
+  align-items: center;
+  display: flex;
 }
 
 .header__logo {
@@ -240,13 +248,20 @@ body {
   min-width: 150px;
   width: 50%;
   text-align: center;
-  transition: box-shadow .2s;
+  transition: all .2s;
 }
 
 .card__add-to-cart:focus,
 .card__add-to-cart:hover {
-  box-shadow: 0 0 10px 2px #005dd9, inset 0 0 10px 2px #005dd9;
-  transition: box-shadow .2s;
+  box-shadow: 0 0 10px 2px #005dd9;
+  transition: all .2s;
+}
+
+.card__add-to-cart:hover {
+  background-color: #009be0;
+  border-color: #009be0;
+  color: #fff;
+  opacity: .8;
 }
 
 /*---------------------------------
@@ -255,7 +270,7 @@ body {
 .main__contact-us {
   font-size: 20px;
   margin: 15px auto 30px auto;
-  max-width: 767px;
+  max-width: 1000px;
   padding: 10px;
 }
 
@@ -325,7 +340,7 @@ body {
 .main__about-us {
   font-size: 20px;
   margin: 15px auto 30px auto;
-  max-width: 1024px;
+  max-width: 1500px;
   padding: 10px;
 }
 
